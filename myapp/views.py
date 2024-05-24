@@ -12,3 +12,14 @@ def homepage(request):
 
 def display_date(request):
     return HttpResponse("This page was served at " + str(datetime.today().year))
+
+def menuitems(request, dish):
+    items = {
+        'pasta' : 'Pasta is a types of nuddles',
+        'meggie' : 'Maggie is a maggie',
+        'samosa' : 'Samosa is a also known as singhda'
+    }
+    
+    description = items[dish]
+    
+    return HttpResponse(f"<h2> {dish} <h2>" + description)
