@@ -17,9 +17,9 @@ def menuitems(request, dish):
     items = {
         'pasta' : 'Pasta is a types of nuddles',
         'meggie' : 'Maggie is a maggie',
-        'samosa' : 'Samosa is a also known as singhda'
+        'samosa' : 'Samosa is a indian snack',
     }
     
     description = items[dish]
     
-    return HttpResponse(f"<h2> {dish} <h2>" + description)
+    return HttpResponse(f"<h2> {dish} </h2>" + description)
