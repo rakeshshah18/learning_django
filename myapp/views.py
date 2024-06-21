@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from myapp.forms import DemoForm
 
 # Create your views here.
 
@@ -12,3 +13,8 @@ def homepage(request):
 
 def display_date(request):
     return HttpResponse("This page was served at " + str(datetime.today().year))
+
+def display_forms(request):
+    form = DemoForm()
+    return render(request, 'forms.html', {'form': form})
+    # return HttpResponse(form.as_p())
